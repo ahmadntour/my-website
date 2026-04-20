@@ -20,7 +20,6 @@
             padding: 24px;
         }
         
-        /* تغيير الخط عند قلب اللغة للانجليزية */
         html[lang="en"] body { font-family: 'Sora', sans-serif; }
 
         body::before {
@@ -47,25 +46,16 @@
             text-align: center;
         }
         .avatar-ring {
-            width: 92px;
-            height: 92px;
-            border-radius: 50%;
-            padding: 2px;
+            width: 92px; height: 92px; border-radius: 50%; padding: 2px;
             background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
             margin: 0 auto 18px;
         }
-        .avatar-inner {
-            width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
-        }
-        .avatar-inner img {
-            width: 100%; height: 100%; object-fit: cover; display: block;
-        }
-        .name {
-            font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 7px;
-        }
-        .title {
-            font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.65; margin-bottom: 20px;
-        }
+        .avatar-inner { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; }
+        .avatar-inner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .name { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 7px; }
+        .title { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.65; margin-bottom: 20px; }
+        
         .save-contact {
             display: inline-block; width: 100%; background: #fff; color: #000;
             text-decoration: none; padding: 14px; border-radius: 14px;
@@ -87,14 +77,12 @@
         .link:hover { background: rgba(255,255,255,0.07); transform: translateY(-2px); }
         .link svg { width: 20px; height: 20px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
         
-        /* الألوان الأصلية للأيقونات */
         .li svg { stroke: #4A9EE8; }
         .ig svg { stroke: #E1306C; }
         .wa svg { stroke: #25D366; }
         .fb svg { stroke: #3B5998; }
         .em svg { stroke: rgba(255,255,255,0.6); }
 
-        /* زر تبديل اللغة - أنيق وبسيط في الأسفل */
         .lang-btn {
             background: transparent; border: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.4); padding: 6px 16px; border-radius: 20px;
@@ -175,21 +163,36 @@
         }
     };
 
-    function toggleLang() {
+    // وظيفة تحديث واجهة الصفحة بناءً على اللغة الممررة
+    function updateUI(lang) {
         const root = document.getElementById('root');
-        const current = root.getAttribute('lang') === 'ar' ? 'en' : 'ar';
+        root.setAttribute('lang', lang);
+        root.setAttribute('dir', data[lang].dir);
         
-        root.setAttribute('lang', current);
-        root.setAttribute('dir', data[current].dir);
-        
-        document.getElementById('name').innerText = data[current].name;
-        document.getElementById('title').innerText = data[current].title;
-        document.getElementById('btn-call').innerText = data[current].btn;
-        document.getElementById('bio').innerHTML = data[current].bio;
-        document.getElementById('footer').innerText = data[current].footer;
-        document.getElementById('lang-toggle').innerText = data[current].toggle;
+        document.getElementById('name').innerText = data[lang].name;
+        document.getElementById('title').innerText = data[lang].title;
+        document.getElementById('btn-call').innerText = data[lang].btn;
+        document.getElementById('bio').innerHTML = data[lang].bio;
+        document.getElementById('footer').innerText = data[lang].footer;
+        document.getElementById('lang-toggle').innerText = data[lang].toggle;
     }
+
+    // وظيفة تبديل اللغة وحفظ الخيار في ذاكرة المتصفح
+    function toggleLang() {
+        const currentLang = document.getElementById('root').getAttribute('lang');
+        const newLang = currentLang === 'ar' ? 'en' : 'ar';
+        
+        localStorage.setItem('userLanguage', newLang); // حفظ الخيار
+        updateUI(newLang);
+    }
+
+    // عند تشغيل الصفحة: ابحث عن اللغة المحفوظة، إذا لم توجد اجعلها عربية
+    window.onload = function() {
+        const savedLang = localStorage.getItem('userLanguage') || 'ar';
+        updateUI(savedLang);
+    };
 </script>
 
 </body>
 </html>
+
