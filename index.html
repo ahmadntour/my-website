@@ -1,238 +1,197 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>أحمد ناطور</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-background: #0f0f10;
-font-family: 'Tajawal', sans-serif;
-padding: 24px;
-}
-body::before {
-content: '';
-position: fixed;
-top: -200px;
-left: 50%;
-transform: translateX(-50%);
-width: 700px;
-height: 700px;
-background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
-pointer-events: none;
-}
-.card {
-width: 100%;
-max-width: 420px;
-background: #161618;
-border: 1px solid rgba(255,255,255,0.08);
-border-radius: 28px;
-padding: 48px 36px 40px;
-position: relative;
-overflow: hidden;
-animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.card::before {
-content: '';
-position: absolute;
-top: 0; left: 20%; right: 20%;
-height: 1px;
-background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-}
-.avatar-section {
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-bottom: 26px;
-}
-.avatar-ring {
-width: 92px;
-height: 92px;
-border-radius: 50%;
-padding: 2px;
-background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
-margin-bottom: 18px;
-}
-.avatar-inner {
-width: 100%;
-height: 100%;
-border-radius: 50%;
-overflow: hidden;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.avatar-inner img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-border-radius: 50%;
-display: block;
-}
-.name {
-font-family: 'Sora', sans-serif;
-font-size: 24px;
-font-weight: 700;
-color: #fff;
-letter-spacing: -0.4px;
-margin-bottom: 7px;
-text-align: center;
-}
-.title {
-font-size: 13px;
-color: rgba(255,255,255,0.35);
-text-align: center;
-line-height: 1.65;
-font-weight: 400;
-}
-.divider {
-height: 1px;
-background: rgba(255,255,255,0.06);
-margin: 26px 0;
-}
-.bio {
-font-size: 14px;
-color: rgba(255,255,255,0.45);
-line-height: 1.9;
-text-align: center;
-}
-.bio strong {
-color: rgba(255,255,255,0.72);
-font-weight: 500;
-}
-.links {
-display: flex;
-flex-direction: row; /* جنب بعض */
-gap: 9px;
-margin-top: 26px;
-flex-wrap: wrap;
-justify-content: center;
-}
-.link {
-display: flex;
-align-items: center;
-gap: 8px;
-background: rgba(255,255,255,0.04);
-border: 1px solid rgba(255,255,255,0.07);
-border-radius: 14px;
-padding: 10px 12px;
-text-decoration: none;
-transition: background 0.2s, border-color 0.2s, transform 0.2s;
-}
-.link:hover {
-background: rgba(255,255,255,0.07);
-border-color: rgba(255,255,255,0.13);
-transform: translateY(-2px);
-}
-.link-icon {
-width: 34px;
-height: 34px;
-border-radius: 9px;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
-}
-.link-icon svg { width: 17px; height: 17px; }
-.li { background: rgba(10,102,194,0.15); }
-.ig { background: rgba(225,48,108,0.12); }
-.em { background: rgba(255,255,255,0.06); }
-.wa { background: rgba(37,211,102,0.11); }
-.fb { background: rgba(59,89,152,0.15); } /* Facebook اللون */
-.link-text { flex: 1; min-width: 0; }
-.link-label { font-size: 10.5px; color: rgba(255,255,255,0.25); margin-bottom: 1px; }
-.link-value { font-size: 13px; color: rgba(255,255,255,0.6); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.arrow { color: rgba(255,255,255,0.16); font-size: 15px; transition: color 0.2s; flex-shrink: 0; }
-.link:hover .arrow { color: rgba(255,255,255,0.35); }
-.footer {
-margin-top: 30px;
-text-align: center;
-font-size: 11px;
-color: rgba(255,255,255,0.12);
-}
-@keyframes rise {
-from { opacity: 0; transform: translateY(28px) scale(0.98); }
-to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-@media (max-width: 460px) {
-.card { padding: 36px 22px 32px; border-radius: 22px; }
-.name { font-size: 21px; }
-}
-</style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>أحمد ناطور | مستشار عقاري وإدارة أعمال</title>
+    
+    <meta name="description" content="أحمد ناطور - مهندس مدني ومستشار عقاري متخصص في إدارة التسويق والمشاريع PMP.">
+    <meta property="og:title" content="أحمد ناطور | مستشار عقاري">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f0f10;
+            font-family: 'Tajawal', sans-serif;
+            padding: 24px;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .card {
+            width: 100%;
+            max-width: 420px;
+            background: #161618;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 28px;
+            padding: 48px 36px 40px;
+            position: relative;
+            overflow: hidden;
+            animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+            text-align: center;
+        }
+        .avatar-ring {
+            width: 92px;
+            height: 92px;
+            border-radius: 50%;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
+            margin: 0 auto 18px;
+        }
+        .avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .avatar-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .name {
+            font-family: 'Sora', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 7px;
+        }
+        .title {
+            font-size: 13px;
+            color: rgba(255,255,255,0.35);
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+        /* زر حفظ جهة الاتصال - الإضافة الاحترافية */
+        .save-contact {
+            display: inline-block;
+            width: 100%;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 26px;
+            transition: 0.3s;
+        }
+        .save-contact:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin: 0 0 26px 0;
+        }
+        .bio {
+            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.9;
+            margin-bottom: 26px;
+        }
+        .bio strong { color: rgba(255,255,255,0.72); font-weight: 500; }
+        
+        .links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            transition: 0.2s;
+        }
+        .link:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-2px);
+        }
+        .link svg { width: 20px; height: 20px; }
+        
+        /* ألوان الأيقونات */
+        .li svg { stroke: #4A9EE8; }
+        .ig svg { stroke: #E1306C; }
+        .wa svg { stroke: #25D366; }
+        .fb svg { stroke: #3B5998; }
+        .em svg { stroke: rgba(255,255,255,0.6); }
+
+        .footer { margin-top: 30px; font-size: 11px; color: rgba(255,255,255,0.12); }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(28px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    </style>
 </head>
 <body>
+
 <div class="card">
-  <div class="avatar-section">
-    <div class="avatar-ring">
-      <div class="avatar-inner">
-        <img src="photo.jpg.JPG" alt="أحمد ناطور"/>
-      </div>
+    <div class="avatar-section">
+        <div class="avatar-ring">
+            <div class="avatar-inner">
+                <img src="photo.jpg.JPG" alt="أحمد ناطور"/>
+            </div>
+        </div>
+        <h1 class="name">أحمد ناطور</h1>
+        <p class="title">مستشار عقاري · إدارة أعمال وتسويق</p>
     </div>
-    <h1 class="name">أحمد ناطور</h1>
-    <p class="title">مستشار عقاري · إدارة أعمال وتسويق</p>
-  </div>
-  <div class="divider"></div>
-  <p class="bio">
-    مهندس مدني بخبرة في <strong>الاستشارات العقارية</strong> بدبي وسوريا،
-    مع تخصص في <strong>إدارة التسويق والموارد البشرية</strong>
-    وشهادة <strong>PMP</strong>.
-  </p>
-  <div class="links">
 
-    <a class="link" href="https://www.linkedin.com/in/ahmadnatour1" target="_blank">
-      <div class="link-icon li">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke="#4A9EE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="2" y="9" width="4" height="12" stroke="#4A9EE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="4" cy="4" r="2" stroke="#4A9EE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </a>
+    <a href="tel:+963981410612" class="save-contact">اتصل بي الآن</a>
 
-    <a class="link" href="https://www.instagram.com/ahmad.natoor" target="_blank">
-      <div class="link-icon ig">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </a>
+    <div class="divider"></div>
 
-    <a class="link" href="mailto:Contact@ahmadnatour.com">
-      <div class="link-icon em">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <polyline points="22,6 12,13 2,6" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </a>
+    <p class="bio">
+        مهندس مدني بخبرة في <strong>الاستشارات العقارية</strong> بدبي وسوريا،
+        مع تخصص في <strong>إدارة التسويق</strong> وشهادة <strong>PMP</strong>.
+    </p>
 
-    <a class="link" href="https://wa.me/963981410612" target="_blank">
-      <div class="link-icon wa">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </a>
+    <div class="links">
+        <a class="link li" href="https://www.linkedin.com/in/ahmadnatour1" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
 
-    <a class="link" href="https://www.facebook.com/ahmad.natour" target="_blank">
-      <div class="link-icon fb">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="#3B5998" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-    </a>
+        <a class="link ig" href="https://www.instagram.com/ahmad.natoor" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
 
-  </div>
-  <div class="footer">© 2026 Ahmad Natour</div>
+        <a class="link wa" href="https://wa.me/963981410612" target="_blank" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </a>
+
+        <a class="link fb" href="https://www.facebook.com/ahmad.natour" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"></path></svg>
+        </a>
+
+        <a class="link em" href="mailto:Contact@ahmadnatour.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+    </div>
+
+    <div class="footer">© 2026 أحمد ناطور</div>
 </div>
+
 </body>
 </html>
