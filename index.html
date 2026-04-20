@@ -1,115 +1,110 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" id="mainHtml">
+<html lang="en" dir="ltr" id="rootHtml">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>أحمد ناطور | Ahmad Natour</title>
+    <title>Ahmad Natour | أحمد ناطور</title>
     
-    <meta name="description" content="أحمد ناطور - مهندس مدني ومستشار عقاري متخصص في إدارة التسويق والمشاريع PMP.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        :root {
+            --bg-color: #0f0f10;
+            --card-bg: #161618;
+            --text-main: #ffffff;
+            --text-dim: rgba(255,255,255,0.4);
+            --accent: #ffffff;
+        }
+
         body {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #0f0f10;
-            font-family: 'Tajawal', sans-serif;
+            background: var(--bg-color);
             padding: 24px;
-            color: #fff;
+            color: var(--text-main);
+            /* الخط الافتراضي إنجليزي */
+            font-family: 'Sora', sans-serif;
+        }
+
+        /* عندما تكون اللغة عربية نغير الخط والاتجاه */
+        html[lang="ar"] body {
+            font-family: 'Tajawal', sans-serif;
         }
 
         .card {
             width: 100%;
             max-width: 420px;
-            background: #161618;
+            background: var(--card-bg);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 28px;
             padding: 48px 36px 40px;
-            position: relative;
-            overflow: hidden;
-            animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
             text-align: center;
+            position: relative;
+            animation: rise 0.8s ease-out;
         }
 
         .avatar-ring {
-            width: 92px;
-            height: 92px;
-            border-radius: 50%;
-            padding: 2px;
+            width: 92px; height: 92px; border-radius: 50%; padding: 2px;
             background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.03));
             margin: 0 auto 18px;
         }
         .avatar-inner { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; }
         .avatar-inner img { width: 100%; height: 100%; object-fit: cover; }
 
-        .name { font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 7px; }
-        .title { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.65; margin-bottom: 20px; min-height: 40px; }
-        
-        .save-contact {
-            display: inline-block;
-            width: 100%;
-            background: #fff;
-            color: #000;
-            text-decoration: none;
-            padding: 14px;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 15px;
-            margin-bottom: 26px;
+        .name { font-size: 24px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .title { font-size: 13px; color: var(--text-dim); margin-bottom: 24px; min-height: 20px; }
+
+        .cta-button {
+            display: block; width: 100%; background: var(--accent); color: #000;
+            text-decoration: none; padding: 16px; border-radius: 16px;
+            font-weight: 700; font-size: 15px; margin-bottom: 28px;
         }
 
-        .divider { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 26px; }
-        .bio { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.9; margin-bottom: 26px; min-height: 80px; }
-        .bio strong { color: rgba(255,255,255,0.72); font-weight: 500; }
+        .divider { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 28px; }
         
-        .links { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px; }
-        .link {
+        .bio { font-size: 14px; color: var(--text-dim); line-height: 1.8; margin-bottom: 32px; }
+        .bio strong { color: rgba(255,255,255,0.8); }
+
+        .social-links { display: flex; gap: 12px; justify-content: center; margin-bottom: 32px; }
+        .social-item {
+            width: 48px; height: 48px; background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;
             display: flex; align-items: center; justify-content: center;
-            width: 50px; height: 50px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 12px;
         }
-        .link:hover { background: rgba(255,255,255,0.07); transform: translateY(-2px); }
-        .link svg { width: 20px; height: 20px; }
-        
-        /* زر تبديل اللغة في الأسفل */
-        .lang-switcher-btn {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: rgba(255, 255, 255, 0.6);
-            padding: 8px 24px;
-            border-radius: 10px;
+        .social-item svg { width: 20px; height: 20px; stroke: rgba(255,255,255,0.7); fill: none; stroke-width: 2; }
+        .social-item:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); }
+
+        /* زر تبديل اللغة الاحترافي */
+        .lang-toggle {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 12px;
             cursor: pointer;
             font-size: 12px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            font-family: inherit;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
-        .lang-switcher-btn:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            border-color: rgba(255, 255, 255, 0.3);
-        }
+        .lang-toggle:hover { background: #fff; color: #000; }
 
-        /* Social Colors */
-        .li svg { stroke: #4A9EE8; } .ig svg { stroke: #E1306C; }
-        .wa svg { stroke: #25D366; } .em svg { stroke: rgba(255,255,255,0.6); }
+        .footer { font-size: 11px; color: rgba(255,255,255,0.15); margin-top: 10px; }
 
-        .footer { margin-top: 24px; font-size: 11px; color: rgba(255,255,255,0.12); }
+        /* إخفاء المحتوى بناءً على اللغة النشطة */
+        [lang="en"] .lang-ar { display: none; }
+        [lang="ar"] .lang-en { display: none; }
 
         @keyframes rise {
-            from { opacity: 0; transform: translateY(28px) scale(0.98); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* تعديلات اللغة الإنجليزية */
-        [dir="ltr"] { font-family: 'Sora', sans-serif; }
-        [dir="ltr"] .bio { font-size: 13px; font-weight: 300; }
     </style>
 </head>
 <body>
@@ -121,69 +116,63 @@
                 <img src="photo.jpg.JPG" alt="Ahmad Natour"/>
             </div>
         </div>
-        <h1 class="name" id="name">أحمد ناطور</h1>
-        <p class="title" id="jobTitle">مستشار عقاري · إدارة أعمال وتسويق</p>
+        <div class="lang-en">
+            <h1 class="name">Ahmad Natour</h1>
+            <p class="title">Real Estate Consultant & Business Mgr</p>
+            <a href="tel:+963981410612" class="cta-button">Call Me Now</a>
+        </div>
+        <div class="lang-ar">
+            <h1 class="name">أحمد ناطور</h1>
+            <p class="title">مستشار عقاري · إدارة أعمال وتسويق</p>
+            <a href="tel:+963981410612" class="cta-button">اتصل بي الآن</a>
+        </div>
     </div>
-
-    <a href="tel:+963981410612" class="save-contact" id="ctaBtn">اتصل بي الآن</a>
 
     <div class="divider"></div>
 
-    <p class="bio" id="bio">
+    <div class="lang-en bio">
+        Civil Engineer with expertise in <strong>Real Estate Consulting</strong> (Dubai & Syria), specialized in <strong>Marketing Management</strong> and <strong>PMP</strong> certified.
+    </div>
+    <div class="lang-ar bio">
         مهندس مدني بخبرة في <strong>الاستشارات العقارية</strong> بدبي وسوريا، مع تخصص في <strong>إدارة التسويق</strong> وشهادة <strong>PMP</strong>.
-    </p>
-
-    <div class="links">
-        <a class="link li" href="https://www.linkedin.com/in/ahmadnatour1" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-        <a class="link ig" href="https://www.instagram.com/ahmad.natoor" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-        <a class="link wa" href="https://wa.me/963981410612" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
-        <a class="link em" href="mailto:Contact@ahmadnatour.com"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
     </div>
 
-    <button class="lang-switcher-btn" onclick="toggleLanguage()" id="langBtn">English</button>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/ahmadnatour1" class="social-item">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="https://wa.me/963981410612" class="social-item">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </a>
+        <a href="mailto:Contact@ahmadnatour.com" class="social-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+    </div>
 
-    <div class="footer" id="footerText">© 2026 أحمد ناطور</div>
+    <button class="lang-toggle" onclick="toggleLang()">
+        <span class="lang-en">العربية</span>
+        <span class="lang-ar">English</span>
+    </button>
+
+    <div class="footer">
+        <span class="lang-en">© 2026 Ahmad Natour</span>
+        <span class="lang-ar">© 2026 أحمد ناطور</span>
+    </div>
 </div>
 
 <script>
-    const translations = {
-        ar: {
-            name: "أحمد ناطور",
-            jobTitle: "مستشار عقاري · إدارة أعمال وتسويق",
-            ctaBtn: "اتصل بي الآن",
-            bio: "مهندس مدني بخبرة في <strong>الاستشارات العقارية</strong> بدبي وسوريا، مع تخصص في <strong>إدارة التسويق</strong> وشهادة <strong>PMP</strong>.",
-            footer: "© 2026 أحمد ناطور",
-            langBtn: "English"
-        },
-        en: {
-            name: "Ahmad Natour",
-            jobTitle: "Real Estate Consultant · Business & Marketing",
-            ctaBtn: "Call Me Now",
-            bio: "Civil Engineer with experience in <strong>Real Estate Consulting</strong> in Dubai & Syria, specializing in <strong>Marketing Management</strong> and <strong>PMP</strong> certified.",
-            footer: "© 2026 Ahmad Natour",
-            langBtn: "العربية"
+    function toggleLang() {
+        const html = document.getElementById('rootHtml');
+        if (html.getAttribute('lang') === 'en') {
+            html.setAttribute('lang', 'ar');
+            html.setAttribute('dir', 'rtl');
+        } else {
+            html.setAttribute('lang', 'en');
+            html.setAttribute('dir', 'ltr');
         }
-    };
-
-    let currentLang = 'ar';
-
-    function toggleLanguage() {
-        currentLang = currentLang === 'ar' ? 'en' : 'ar';
-        
-        const html = document.getElementById('mainHtml');
-        html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-        html.lang = currentLang;
-
-        document.getElementById('name').textContent = translations[currentLang].name;
-        document.getElementById('jobTitle').textContent = translations[currentLang].jobTitle;
-        document.getElementById('ctaBtn').textContent = translations[currentLang].ctaBtn;
-        document.getElementById('bio').innerHTML = translations[currentLang].bio;
-        document.getElementById('footerText').textContent = translations[currentLang].footer;
-        document.getElementById('langBtn').textContent = translations[currentLang].langBtn;
-        
-        document.body.style.fontFamily = currentLang === 'ar' ? "'Tajawal', sans-serif" : "'Sora', sans-serif";
     }
 </script>
 
 </body>
 </html>
+
