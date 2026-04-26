@@ -325,7 +325,7 @@ ul { list-style: none; }
 }
 .hero-img-accent {
   position: absolute;
-  inset: -12px -12px -0px 12px;
+  inset: -0px -0px -0px 0px;
   border: 1.5px solid rgba(184,150,62,0.4);
   border-radius: var(--radius-lg);
   z-index: 1;
