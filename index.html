@@ -1,234 +1,408 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" id="root">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    
-    <title>أحمد ناطور | خبير استثمار وعقارات حلب | مستشار عقاري هندسي</title>
-    <meta name="description" content="أحمد ناطور، مستشار عقاري متخصص في سوق حلب. نقدم رؤية هندسية وتحليلات ميدانية دقيقة لعقارات الشهباء، حلب الجديدة، والزهراء لضمان استثمار عقاري ناجح.">
-    <meta name="keywords" content="عقارات حلب، استثمار عقاري حلب، أحمد ناطور، أسعار العقارات في حلب، مهندس عقارات، الشهباء، حلب الجديدة، الزهراء">
-    <link rel="canonical" href="https://ahmadnatour.com" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "أحمد ناطور",
-      "jobTitle": "Property Consultant & Civil Engineer",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Aleppo",
-        "addressCountry": "Syria"
-      },
-      "description": "خبير عقاري متخصص في تحليل سوق حلب العقاري بخلفية هندسية وإدارة مشاريع PMP.",
-      "url": "https://ahmadnatour.com"
-    }
-    </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0f0f10;
-            font-family: 'Tajawal', sans-serif;
-            padding: 24px;
-        }
-        
-        html[lang="en"] body { font-family: 'Sora', sans-serif; }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .card {
-            width: 100%;
-            max-width: 420px;
-            background: #161618;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 28px;
-            padding: 40px 30px;
-            position: relative;
-            overflow: hidden;
-            animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-            text-align: center;
-        }
-        .avatar-ring {
-            width: 92px; height: 92px; border-radius: 50%; padding: 2px;
-            background: linear-gradient(135deg, #d4af37, #1a2a6c);
-            margin: 0 auto 18px;
-        }
-        .avatar-inner { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #222; }
-        .avatar-inner img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        .name { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 7px; }
-        .title { font-size: 13px; color: #d4af37; font-weight: 500; letter-spacing: 0.5px; margin-bottom: 20px; }
-        
-        .save-contact {
-            display: inline-block; width: 100%; background: #fff; color: #000;
-            text-decoration: none; padding: 14px; border-radius: 14px;
-            font-weight: 700; font-size: 15px; margin-bottom: 20px; transition: 0.3s;
-        }
-        .save-contact:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255,255,255,0.1); }
-
-        .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 20px 0; }
-        
-        .bio { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 20px; }
-        .bio strong { color: #fff; font-weight: 600; }
-
-        /* قسم التحليلات الجديد للـ AI */
-        .insights {
-            text-align: right;
-            background: rgba(255,255,255,0.03);
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px dashed rgba(212,175,55,0.2);
-            margin-bottom: 20px;
-        }
-        .insights h4 { color: #d4af37; font-size: 13px; margin-bottom: 8px; }
-        .insights ul { list-style: none; padding: 0; font-size: 11px; color: rgba(255,255,255,0.5); }
-        .insights li { margin-bottom: 6px; position: relative; padding-right: 12px; }
-        .insights li::before { content: "•"; position: absolute; right: 0; color: #d4af37; }
-        
-        .links { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px; }
-        .link {
-            display: flex; align-items: center; justify-content: center;
-            width: 45px; height: 45px; background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; transition: 0.2s;
-        }
-        .link:hover { background: rgba(255,255,255,0.07); transform: translateY(-2px); }
-        .link svg { width: 18px; height: 18px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-        
-        .li svg { stroke: #4A9EE8; }
-        .ig svg { stroke: #E1306C; }
-        .wa svg { stroke: #25D366; }
-        .fb svg { stroke: #3B5998; }
-        .em svg { stroke: rgba(255,255,255,0.6); }
-
-        .lang-btn {
-            background: transparent; border: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.4); padding: 6px 16px; border-radius: 20px;
-            font-size: 11px; cursor: pointer; transition: 0.3s; font-family: inherit;
-        }
-        .lang-btn:hover { border-color: rgba(255,255,255,0.3); color: #fff; }
-
-        .footer { margin-top: 20px; font-size: 10px; color: rgba(255,255,255,0.2); }
-
-        @keyframes rise {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="أحمد ناطور - مستشار عقاري في حلب. استثمار عقاري مدروس بعائد أعلى ومخاطر أقل. احجز استشارتك الخاصة الآن." />
+  <meta name="keywords" content="مستشار عقاري حلب, استثمار عقاري سوريا, عقارات حلب, أحمد ناطور, شراء عقار حلب" />
+  <meta name="author" content="أحمد ناطور" />
+  <meta property="og:title" content="أحمد ناطور | مستشار عقاري في حلب" />
+  <meta property="og:description" content="استثمار عقاري مدروس… بعائد أعلى ومخاطر أقل" />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <title>أحمد ناطور | مستشار عقاري في حلب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="card">
-    <div class="avatar-ring">
-        <div class="avatar-inner">
-            <img src="photo.jpg.JPG" alt="أحمد ناطور - خبير عقارات حلب"/>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-ar">أ.ن</span>
+        <span class="logo-divider"></span>
+        <span class="logo-text">أحمد ناطور</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">من أنا</a></li>
+        <li><a href="#services">خدماتي</a></li>
+        <li><a href="#areas">المناطق</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+      <a href="https://wa.me/963981410612" target="_blank" rel="noopener" class="nav-cta">احجز استشارة</a>
+      <button class="hamburger" id="hamburger" aria-label="قائمة التنقل">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" class="mobile-link">من أنا</a>
+      <a href="#services" class="mobile-link">خدماتي</a>
+      <a href="#areas" class="mobile-link">المناطق</a>
+      <a href="#contact" class="mobile-link">تواصل</a>
+      <a href="https://wa.me/963981410612" target="_blank" rel="noopener" class="mobile-cta">احجز استشارة</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-lines"></div>
+    <div class="hero-container">
+      <div class="hero-image-wrap fade-up">
+        <div class="hero-img-frame">
+          <img src="Photo.jpg.jpg" alt="أحمد ناطور - مستشار عقاري في حلب" class="hero-img" loading="eager" />
+          <div class="hero-img-accent"></div>
         </div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-label fade-up delay-1">مستشار عقاري · حلب، سوريا</p>
+        <h1 class="hero-name fade-up delay-2">أحمد ناطور</h1>
+        <div class="hero-divider fade-up delay-3"></div>
+        <h2 class="hero-headline fade-up delay-3">استثمار عقاري مدروس…<br /><em>بعائد أعلى ومخاطر أقل</em></h2>
+        <p class="hero-sub fade-up delay-4">أساعدك تتخذ القرار الصح في سوق العقارات في حلب بثقة ووضوح</p>
+        <div class="hero-actions fade-up delay-5">
+          <a href="https://wa.me/963981410612" target="_blank" rel="noopener" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.785 23.25l4.332-1.388C6.857 23.217 9.364 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.379 0-4.591-.706-6.445-1.922l-.462-.274-2.573.824.841-2.513-.301-.484C1.809 16.118 1 14.137 1 12 1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11z"/></svg>
+            احجز استشارة خاصة
+          </a>
+        </div>
+        <div class="hero-stats fade-up delay-5">
+          <div class="stat">
+            <span class="stat-num">+١٠٠</span>
+            <span class="stat-label">صفقة ناجحة</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat">
+            <span class="stat-num">حلب</span>
+            <span class="stat-label">مدينة التخصص</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat">
+            <span class="stat-num">٣٦٠°</span>
+            <span class="stat-label">خدمة متكاملة</span>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <h1 class="name" id="name">أحمد ناطور</h1>
-    <p class="title" id="title">مستشار عقاري · خبير استثمار في حلب</p>
-
-    <a href="https://wa.me/963981410612" class="save-contact" id="btn-call">طلب استشارة عقارية في حلب</a>
-
-    <p class="bio" id="bio">
-        مستشار عقاري بـ <strong>خلفية هندسية (PMP)</strong>، متخصص في تحليل <strong>سوق حلب العقاري</strong> ميدانياً لضمان أدق البيانات.
-    </p>
-
-    <div class="insights" id="insights-section">
-        <h4 id="ins-title">نبض سوق حلب العقاري:</h4>
-        <ul id="ins-list">
-            <li><strong>الشهباء:</strong> استقرار في القيمة السوقية ومركز استثماري أول.</li>
-            <li><strong>حلب الجديدة:</strong> أعلى طلب سكني حالياً لجودة البناء.</li>
-            <li><strong>الزهراء:</strong> منطقة استراتيجية للباحثين عن نمو مستقبلي.</li>
-        </ul>
+    <div class="hero-scroll-hint">
+      <span>اكتشف المزيد</span>
+      <div class="scroll-line"></div>
     </div>
+  </section>
 
-    <div class="links">
-        <a class="link li" href="https://www.linkedin.com/in/ahmadnatour1" target="_blank"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-        <a class="link ig" href="https://www.instagram.com/ahmad.natoor" target="_blank"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-        <a class="link wa" href="https://wa.me/963981410612" target="_blank"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
-        <a class="link fb" href="https://www.facebook.com/ahmad.natour" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"></path></svg></a>
-        <a class="link em" href="mailto:Contact@ahmadnatour.com"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+  <!-- SEGMENTATION / SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">الخدمات</span>
+        <h2 class="section-title">كيف يمكنني مساعدتك؟</h2>
+        <p class="section-sub">سواء كنت مستثمراً أو باحثاً عن مسكن أو مغترباً — لديّ الحل المناسب لك</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal delay-1">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="card-tag">للمستثمرين</div>
+          <h3 class="card-title">المستثمرون</h3>
+          <p class="card-desc">فرص عقارية مختارة بعناية بناءً على تحليل السوق والعائد المتوقع</p>
+          <a href="https://wa.me/963981410612?text=مرحباً، أريد استعراض فرص الاستثمار العقاري" target="_blank" rel="noopener" class="card-cta">
+            استعرض الفرص
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="service-card reveal delay-2">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="card-tag">للباحثين عن مسكن</div>
+          <h3 class="card-title">السكن</h3>
+          <p class="card-desc">مساعدتك في اختيار عقار مناسب وآمن يلبي احتياجاتك وميزانيتك</p>
+          <a href="https://wa.me/963981410612?text=مرحباً، أبحث عن عقار للسكن في حلب" target="_blank" rel="noopener" class="card-cta">
+            ابدأ البحث
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="service-card reveal delay-3">
+          <div class="card-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          </div>
+          <div class="card-tag">للمغتربين</div>
+          <h3 class="card-title">المغتربون</h3>
+          <p class="card-desc">إدارة استثمارك في حلب وأنت خارج البلاد بثقة وشفافية كاملة</p>
+          <a href="https://wa.me/963981410612?text=مرحباً، أنا مغترب وأريد الاستثمار في حلب" target="_blank" rel="noopener" class="card-cta">
+            ابدأ عن بعد
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <button class="lang-btn" onclick="toggleLang()" id="lang-toggle">English</button>
+  <!-- WHY CHOOSE ME -->
+  <section class="why" id="about">
+    <div class="container">
+      <div class="why-inner">
+        <div class="why-content reveal">
+          <span class="section-tag">لماذا أنا</span>
+          <h2 class="section-title">لماذا العمل معي؟</h2>
+          <p class="why-intro">أؤمن بأن القرار العقاري الصحيح يُبنى على معرفة عميقة، لا على ضغط المبيعات. أنا هنا لأكون مستشارك الموثوق، لا مجرد وسيط.</p>
+          <ul class="why-list">
+            <li class="why-item reveal delay-1">
+              <div class="why-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <h4>فهم عميق لسوق العقارات في حلب</h4>
+                <p>خبرة ميدانية حقيقية في كل أحياء المدينة وديناميكياتها</p>
+              </div>
+            </li>
+            <li class="why-item reveal delay-2">
+              <div class="why-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <h4>تحليل دقيق للمخاطر قبل أي قرار</h4>
+                <p>تقييم شامل ومنهجي يحمي استثمارك من المفاجآت</p>
+              </div>
+            </li>
+            <li class="why-item reveal delay-3">
+              <div class="why-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <h4>شفافية كاملة في التقييم والأسعار</h4>
+                <p>لا مبالغات، لا معلومات مخفية — أرقام حقيقية وتقييم صادق</p>
+              </div>
+            </li>
+            <li class="why-item reveal delay-4">
+              <div class="why-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <h4>متابعة مستمرة حتى إتمام الصفقة</h4>
+                <p>أبقى معك في كل خطوة من الاستشارة الأولى حتى التوقيع</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="why-visual reveal delay-2">
+          <div class="quote-block">
+            <div class="quote-mark">"</div>
+            <blockquote>العقار الجيد ليس الأرخص، ولا الأغلى — بل الأنسب لهدفك وظروف السوق.</blockquote>
+            <cite>— أحمد ناطور</cite>
+          </div>
+          <div class="trust-badges">
+            <div class="badge">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>موثوق</span>
+            </div>
+            <div class="badge">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>سريع الاستجابة</span>
+            </div>
+            <div class="badge">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              <span>شفاف</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div class="footer" id="footer">© 2026 أحمد ناطور - خبير عقارات حلب</div>
-</div>
+  <!-- HOW I WORK -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">المنهجية</span>
+        <h2 class="section-title">كيف أعمل</h2>
+        <p class="section-sub">منهجية واضحة ومثبتة لضمان أفضل النتائج</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal delay-1">
+          <div class="step-number">١</div>
+          <div class="step-content">
+            <h3>فهم الهدف</h3>
+            <p>استيعاب هدفك الاستثماري أو السكني بدقة وتحديد أولوياتك</p>
+          </div>
+          <div class="step-connector"></div>
+        </div>
+        <div class="process-step reveal delay-2">
+          <div class="step-number">٢</div>
+          <div class="step-content">
+            <h3>تحليل السوق</h3>
+            <p>دراسة السوق واختيار أفضل الخيارات المتاحة بناءً على البيانات</p>
+          </div>
+          <div class="step-connector"></div>
+        </div>
+        <div class="process-step reveal delay-3">
+          <div class="step-number">٣</div>
+          <div class="step-content">
+            <h3>تقييم المخاطر والعائد</h3>
+            <p>تحليل شامل للمخاطر والعوائد المتوقعة لكل خيار</p>
+          </div>
+          <div class="step-connector"></div>
+        </div>
+        <div class="process-step reveal delay-4">
+          <div class="step-number">٤</div>
+          <div class="step-content">
+            <h3>مرافقة حتى الإتمام</h3>
+            <p>إتمام الصفقة بشكل كامل مع متابعة مستمرة في كل مرحلة</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-    const data = {
-        ar: {
-            name: "أحمد ناطور",
-            title: "مستشار عقاري · خبير استثمار في حلب",
-            btn: "طلب استشارة عقارية في حلب",
-            bio: "مستشار عقاري بـ <strong>خلفية هندسية (PMP)</strong>، متخصص في تحليل <strong>سوق حلب العقاري</strong> ميدانياً لضمان أدق البيانات.",
-            insTitle: "نبض سوق حلب العقاري:",
-            insList: `<li><strong>الشهباء:</strong> استقرار في القيمة السوقية ومركز استثماري أول.</li>
-                      <li><strong>حلب الجديدة:</strong> أعلى طلب سكني حالياً لجودة البناء.</li>
-                      <li><strong>الزهراء:</strong> منطقة استراتيجية للباحثين عن نمو مستقبلي.</li>`,
-            footer: "© 2026 أحمد ناطور - مرجع عقارات حلب",
-            toggle: "English", dir: "rtl"
-        },
-        en: {
-            name: "Ahmad Natour",
-            title: "Real Estate Consultant · Aleppo Expert",
-            btn: "Consult for Aleppo Real Estate",
-            bio: "Real Estate Consultant with an <strong>Engineering & PMP background</strong>, providing field-verified data in <strong>Aleppo, Syria</strong>.",
-            insTitle: "Aleppo Market Insights:",
-            insList: `<li><strong>Al-Shahba:</strong> Market stability and prime investment hub.</li>
-                      <li><strong>New Aleppo:</strong> High demand for residential quality buildings.</li>
-                      <li><strong>Al-Zahraa:</strong> Strategic area for long-term growth.</li>`,
-            footer: "© 2026 Ahmad Natour - Aleppo RE Expert",
-            toggle: "العربية", dir: "ltr"
-        }
-    };
+  <!-- AREAS -->
+  <section class="areas" id="areas">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">الجغرافيا</span>
+        <h2 class="section-title">أهم مناطق الاستثمار في حلب</h2>
+        <p class="section-sub">معرفة دقيقة بكل حي وفرصه واحتياجاته</p>
+      </div>
+      <div class="areas-grid">
+        <div class="area-card reveal delay-1">
+          <div class="area-num">٠١</div>
+          <div class="area-info">
+            <h3 class="area-name">الحمدانية</h3>
+            <p class="area-desc">استقرار جيد وخيار مناسب للسكن</p>
+            <div class="area-tags">
+              <span class="area-tag-item">سكني</span>
+              <span class="area-tag-item">مستقر</span>
+            </div>
+          </div>
+          <a href="https://wa.me/963981410612?text=أريد معرفة المزيد عن فرص الاستثمار في الحمدانية" target="_blank" rel="noopener" class="area-link">استفسر الآن ←</a>
+        </div>
+        <div class="area-card reveal delay-2">
+          <div class="area-num">٠٢</div>
+          <div class="area-info">
+            <h3 class="area-name">الفرقان</h3>
+            <p class="area-desc">طلب مرتفع وموقع حيوي في قلب المدينة</p>
+            <div class="area-tags">
+              <span class="area-tag-item">طلب مرتفع</span>
+              <span class="area-tag-item">موقع حيوي</span>
+            </div>
+          </div>
+          <a href="https://wa.me/963981410612?text=أريد معرفة المزيد عن فرص الاستثمار في الفرقان" target="_blank" rel="noopener" class="area-link">استفسر الآن ←</a>
+        </div>
+        <div class="area-card reveal delay-3">
+          <div class="area-num">٠٣</div>
+          <div class="area-info">
+            <h3 class="area-name">الموكامبو</h3>
+            <p class="area-desc">نشاط تجاري وفرص استثمارية متنوعة</p>
+            <div class="area-tags">
+              <span class="area-tag-item">تجاري</span>
+              <span class="area-tag-item">استثماري</span>
+            </div>
+          </div>
+          <a href="https://wa.me/963981410612?text=أريد معرفة المزيد عن فرص الاستثمار في الموكامبو" target="_blank" rel="noopener" class="area-link">استفسر الآن ←</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    function updateUI(lang) {
-        const root = document.getElementById('root');
-        root.setAttribute('lang', lang);
-        root.setAttribute('dir', data[lang].dir);
-        document.getElementById('name').innerText = data[lang].name;
-        document.getElementById('title').innerText = data[lang].title;
-        document.getElementById('btn-call').innerText = data[lang].btn;
-        document.getElementById('bio').innerHTML = data[lang].bio;
-        document.getElementById('ins-title').innerText = data[lang].insTitle;
-        document.getElementById('ins-list').innerHTML = data[lang].insList;
-        document.getElementById('footer').innerText = data[lang].footer;
-        document.getElementById('lang-toggle').innerText = data[lang].toggle;
-        
-        const btn = document.getElementById('btn-call');
-        btn.href = lang === 'en' ? 
-            "https://wa.me/963981410612?text=Hello Ahmad, I am interested in Aleppo real estate investment." : 
-            "https://wa.me/963981410612?text=مرحباً سيد أحمد، مهتم بالتعاون معك في استثمار عقاري بحلب.";
-    }
+  <!-- MARKET INSIGHTS -->
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="insights-inner">
+        <div class="insights-header reveal">
+          <span class="section-tag">السوق</span>
+          <h2 class="section-title">نظرة على السوق</h2>
+        </div>
+        <div class="insights-cards">
+          <div class="insight-card reveal delay-1">
+            <div class="insight-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4>استقرار نسبي</h4>
+            <p>استقرار نسبي في بعض المناطق المنظمة يُتيح فرص دخول مناسبة للمستثمر الحذر</p>
+          </div>
+          <div class="insight-card reveal delay-2">
+            <div class="insight-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <h4>فرص طويلة الأمد</h4>
+            <p>فرص جيدة للاستثمار طويل الأمد مع توقعات إيجابية لمن يدخل في الوقت المناسب</p>
+          </div>
+          <div class="insight-card reveal delay-3">
+            <div class="insight-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h4>تفاوت حسب الموقع</h4>
+            <p>تفاوت واضح في الأسعار حسب الموقع يستدعي دراسة دقيقة وخبرة محلية قبل أي قرار</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    function toggleLang() {
-        const currentLang = document.getElementById('root').getAttribute('lang');
-        const newLang = currentLang === 'ar' ? 'en' : 'ar';
-        localStorage.setItem('userLanguage', newLang);
-        updateUI(newLang);
-    }
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-content reveal">
+          <span class="section-tag">تواصل</span>
+          <h2 class="section-title">تواصل معي</h2>
+          <p class="contact-sub">خطوة واحدة تفصلك عن استثمار مدروس — تواصل الآن وسأكون معك</p>
+          <a href="https://wa.me/963981410612" target="_blank" rel="noopener" class="btn-primary btn-large">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.785 23.25l4.332-1.388C6.857 23.217 9.364 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.379 0-4.591-.706-6.445-1.922l-.462-.274-2.573.824.841-2.513-.301-.484C1.809 16.118 1 14.137 1 12 1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11z"/></svg>
+            ابدأ محادثة على واتساب
+          </a>
+          <div class="contact-links">
+            <a href="mailto:Contact@ahmadnatour.com" class="contact-link">
+              <div class="contact-link-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <span>Contact@ahmadnatour.com</span>
+            </a>
+          </div>
+        </div>
+        <div class="contact-social reveal delay-2">
+          <p class="social-title">تابعني على</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/ahmadnatour1" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://www.facebook.com/share/1AdoDAkM3W/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/ahmad.natoor" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    window.onload = function() {
-        updateUI(localStorage.getItem('userLanguage') || 'ar');
-    };
-</script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">أحمد ناطور</span>
+          <p>مستشار عقاري في حلب</p>
+        </div>
+        <p class="footer-copy">© ٢٠٢٥ أحمد ناطور. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/963981410612" target="_blank" rel="noopener" class="whatsapp-float" aria-label="تواصل عبر واتساب">
+    <div class="wa-pulse"></div>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.785 23.25l4.332-1.388C6.857 23.217 9.364 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.379 0-4.591-.706-6.445-1.922l-.462-.274-2.573.824.841-2.513-.301-.484C1.809 16.118 1 14.137 1 12 1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11z"/></svg>
+    <span class="wa-tooltip">واتساب</span>
+  </a>
+
+  <script src="script.js"></script>
 </body>
 </html>
