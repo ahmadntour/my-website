@@ -9,14 +9,14 @@
   <meta property="og:title" content="أحمد ناطور | مستشار عقاري في حلب" />
   <meta property="og:description" content="استثمار عقاري مدروس… بعائد أعلى ومخاطر أقل" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://ahmadnatour.com/favicon-512x512.png" />
+  <meta property="og:image" content="https://ahmadnatour.com/favicon-512x512.webp" />
   <meta property="og:image:width" content="512" />
   <meta property="og:image:height" content="512" />
   <meta property="og:url" content="https://ahmadnatour.com" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="أحمد ناطور | مستشار عقاري في حلب" />
   <meta name="twitter:description" content="استثمار عقاري مدروس… بعائد أعلى ومخاطر أقل" />
-  <meta name="twitter:image" content="https://ahmadnatour.com/favicon-512x512.png" />
+  <meta name="twitter:image" content="https://ahmadnatour.com/favicon-512x512.webp" />
   <meta name="robots" content="index, follow" />
   <title>أحمد ناطور | مستشار عقاري في حلب</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,12 +25,12 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Favicon Links -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.webp" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.webp" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.webp" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.webp" />
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.webp" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.webp" />
   <meta name="theme-color" content="#1E5128" />
 </head>
 <body>
@@ -49,7 +49,7 @@
         <li><a href="#areas">المناطق</a></li>
         <li><a href="#contact">تواصل</a></li>
       </ul>
-      <a href="https://wa.me/963981410612" target="_blank" rel="noopener" class="nav-cta">احجز استشارة</a>
+      <a href="#consultation" class="nav-cta">احجز استشارة</a>
       <button class="hamburger" id="hamburger" aria-label="قائمة التنقل">
         <span></span><span></span><span></span>
       </button>
@@ -59,7 +59,7 @@
       <a href="#services" class="mobile-link">خدماتي</a>
       <a href="#areas" class="mobile-link">المناطق</a>
       <a href="#contact" class="mobile-link">تواصل</a>
-      <a href="https://wa.me/963981410612" target="_blank" rel="noopener" class="mobile-cta">احجز استشارة</a>
+      <a href="#consultation" class="mobile-cta">احجز استشارة</a>
     </div>
   </nav>
 
@@ -354,6 +354,44 @@
             <p>تفاوت واضح في الأسعار حسب الموقع يستدعي دراسة دقيقة وخبرة محلية قبل أي قرار</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTATION FORM -->
+  <section class="contact-form-section" id="consultation">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">طلب استشارة</span>
+        <h2 class="section-title">احجز استشارتك الخاصة</h2>
+        <p class="section-sub">يرجى ملء البيانات التالية وسأقوم بالتواصل معك لمناقشة أهدافك الاستثمارية</p>
+      </div>
+      <div class="form-container reveal delay-1">
+        <form action="#" method="POST" class="consultation-form">
+          <div class="form-group">
+            <label for="name">الاسم الكامل</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="أدخل اسمك الكامل" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">رقم الهاتف (واتساب)</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+963..." required>
+          </div>
+          <div class="form-group">
+            <label for="interest">نوع الاهتمام</label>
+            <select id="interest" name="interest" class="form-control" required>
+              <option value="" disabled selected>اختر نوع الاستثمار</option>
+              <option value="investment">استثمار عقاري</option>
+              <option value="residential">شراء مسكن</option>
+              <option value="management">إدارة أملاك (للمغتربين)</option>
+              <option value="other">أخرى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">تفاصيل إضافية</label>
+            <textarea id="message" name="message" class="form-control" rows="4" placeholder="كيف يمكنني مساعدتك؟"></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">إرسال طلب الاستشارة</button>
+        </form>
       </div>
     </div>
   </section>

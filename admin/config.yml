@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main # Pointing to the main production branch
+
+media_folder: "assets/img" # Folder where user uploaded files will go
+public_folder: "/assets/img" # The public path for the above folder
+
+collections:
+  - name: "blog"
+    label: "Blog / Market Insights"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Cover Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image/Icon", name: "image", widget: "image" }
